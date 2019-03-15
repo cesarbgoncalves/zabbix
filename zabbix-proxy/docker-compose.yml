@@ -1,0 +1,30 @@
+# mysql-server:
+#   image: mariadb:latest
+#   hostname: "mysql-server"
+#   command: "--character-set-server=utf8 --collation-server=utf8_bin"  
+#   volumes:
+#     - ./banco:/var/lib/mysql
+#   environment:  
+#     - MYSQL_DATABASE=zabbix_proxy
+#     - MYSQL_USER=zabbix
+#     - MYSQL_PASSWORD=zabbix
+#     - MYSQL_ROOT_PASSWORD=root
+#     - MYSQL_ROOT_HOST=%
+zabbix-proxy:
+  image: img.zabbix-proxy-sql:latest
+  hostname: zabbix-proxy
+  # ports:
+  #   - 10050:10050
+  environment:
+    - ZBX_HOSTNAME=zabbix-proxy
+    # - ZBX_SERVER_HOST="172.16.250.249"
+    - ZBX_SERVER_HOST=172.17.0.3
+    - ZBX_PROXYMODE=0
+    - DB_SERVER_HOST=zabbix-dev.c35pkwhpejsl.us-west-2.rds.amazonaws.com
+    - MYSQL_USER=admin
+    - MYSQL_PASSWORD=bionexo2019
+    - MYSQL_DATABASE=zabbix_proxy
+    - PHP_TZ=America/Sao_Paulo
+    - ZBX_DEBUGLEVEL=3
+  # links:
+  # - mysql-server
