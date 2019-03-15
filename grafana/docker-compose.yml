@@ -1,0 +1,6 @@
+grafana:
+  image: monitoringartist/grafana-xxl
+  ports:
+    - "3000:3000"
+  volumes:
+    - /bionexo/grafana:/var/lib/grafana
