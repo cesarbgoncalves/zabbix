@@ -19,8 +19,10 @@
 #     #####################################################
 zabbix-server:
   image: zabbix/zabbix-server-mysql:ubuntu-4.0-latest
-  expose:
-    - "10051"
+  ports:
+    - 10051:10051
+  volumes:
+    - /bionexo/zabbix/zabbix/zabbix_server.conf:/etc/zabbix/zabbix_server.conf
   environment:
     - DB_SERVER_ROOT_USER=admin
     - DB_SERVER_ROOT_PASS=bionexo2019
@@ -56,7 +58,7 @@ zabbix-web:
 zabbix-agent:
   image: zabbix/zabbix-agent:ubuntu-4.0-latest
   hostname: zabbix-server-agent
-  privileged: "true"
+  privileged: true
   volumes:
     - ./zabbix/agent-run:/var/run
   ports:
