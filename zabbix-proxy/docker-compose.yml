@@ -18,11 +18,11 @@ zabbix-proxy:
   environment:
     - ZBX_HOSTNAME=zabbix-proxy
     # - ZBX_SERVER_HOST="172.16.250.249"
-    - ZBX_SERVER_HOST=172.17.0.3
+    - ZBX_SERVER_HOST=
     - ZBX_PROXYMODE=0
-    - DB_SERVER_HOST=zabbix-dev.c35pkwhpejsl.us-west-2.rds.amazonaws.com
-    - MYSQL_USER=admin
-    - MYSQL_PASSWORD=bionexo2019
+    - DB_SERVER_HOST=
+    - MYSQL_USER=
+    - MYSQL_PASSWORD=
     - MYSQL_DATABASE=zabbix_proxy
     - PHP_TZ=America/Sao_Paulo
     - ZBX_DEBUGLEVEL=3
