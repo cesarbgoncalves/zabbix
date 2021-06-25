@@ -24,14 +24,14 @@ zabbix-server:
   volumes:
     - /bionexo/zabbix/zabbix/zabbix_server.conf:/etc/zabbix/zabbix_server.conf
   environment:
-    - DB_SERVER_ROOT_USER=admin
-    - DB_SERVER_ROOT_PASS=bionexo2019
+    - DB_SERVER_ROOT_USER=
+    - DB_SERVER_ROOT_PASS=
     # - MYSQL_ROOT_PASSWORD=root
-    - DB_SERVER_HOST=zabbix-dev.c35pkwhpejsl.us-west-2.rds.amazonaws.com
+    - DB_SERVER_HOST=
     - DB_SERVER_PORT=3306
-    - MYSQL_USER=admin
-    - MYSQL_PASSWORD=bionexo2019
-    - MYSQL_DATABASE=zabbix
+    - MYSQL_USER=
+    - MYSQL_PASSWORD=
+    - MYSQL_DATABASE=
   # links:
   #   - mysql-server
       #####################################################
@@ -42,12 +42,12 @@ zabbix-web:
   ports:
     - 80:80
   environment:
-    - DB_SERVER_HOST=zabbix-dev.c35pkwhpejsl.us-west-2.rds.amazonaws.com
+    - DB_SERVER_HOST=
     - DB_SERVER_PORT=3306
-    - MYSQL_USER=admin
-    - MYSQL_PASSWORD=bionexo2019
-    - MYSQL_DATABASE=zabbix
-    - ZBX_SERVER_HOST=zabbix-server
+    - MYSQL_USER=
+    - MYSQL_PASSWORD=
+    - MYSQL_DATABASE=
+    - ZBX_SERVER_HOST=
     - PHP_TZ=America/Sao_Paulo
   links:
     # - mysql-server
