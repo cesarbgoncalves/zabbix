@@ -1,1 +1,1 @@
-# Repositorio criado para configuração do Zabbix e Zabbix-Proxy da Bionexo
+# Repositorio criado para configuração do Zabbix e Zabbix-Proxy
